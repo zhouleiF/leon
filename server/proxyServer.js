@@ -1,11 +1,9 @@
-var httpProxy = require('http-proxy'),
-    options = {
-        pathnameOnly: true,
-        router: {
-            '/projects/jsconsole': '127.0.0.1:8000',
-            '/projects/weinre': '127.0.0.1:8001',
-            '/api': '127.0.0.1:8002'
-        }
-    },
-    proxyServer = httpProxy.createServer(options)
-    proxyServer.listen(80)
+var express = require('express')
+var app = express()
+var proxy = require('express-http-proxy')
+
+app.use('/jsconsole', proxy('localhost:8000'))
+app.use('/weinre', proxy('localhost:8001'))
+app.listen(80, function() {
+    console.log('Example app listening on port 80!');
+});
