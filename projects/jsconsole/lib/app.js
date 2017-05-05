@@ -1,3 +1,4 @@
+'use strict';
 const restify = require('restify');
 const version = require(__dirname + '/../package.json').version;
 const fs = require('fs');
