@@ -5,5 +5,5 @@ var proxy = require('express-http-proxy')
 app.use('/jsconsole', proxy('localhost:8000'))
 app.use('/weinre', proxy('localhost:8001'))
 app.listen(80, function() {
-    console.log('Example app listening on port 80!');
-});
+    console.log('Example app listening on port 80!')
+})
