@@ -672,7 +672,7 @@ var exec = document.getElementById('exec'),
         // place script request for new listen ID and start SSE
         var script = document.createElement('script'),
             callback = '_cb' + +new Date;
-        script.src = 'remote/' + (id||'') + '?callback=' + callback;
+        script.src = '/remote/' + (id||'') + '?callback=' + callback;
 
         window[callback] = function (id) {
           remoteId = id;
