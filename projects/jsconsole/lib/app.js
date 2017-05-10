@@ -4,8 +4,8 @@ const version = require(__dirname + '/../package.json').version;
 const fs = require('fs');
 const sw = fs.readFileSync(__dirname + '/../public/sw.js', 'utf8').replace(/\$VERSION/, version);
 const options = {
-    key: fs.readFileSync('../../../server/https/https.key'),
-    cert: fs.readFileSync('../../../server/https/https.pem')
+    key: fs.readFileSync(__dirname + '/../../../server/https/https.key'),
+    cert: fs.readFileSync(__dirname + '/../../../server/https/https.pem')
 };
 const server = restify.createServer(options);
 const sessions = {
